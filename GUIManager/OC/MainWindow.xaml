@@ -1,0 +1,84 @@
+﻿<Window x:Class="OC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OC"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="530" Width="1081.127" Background="#FFD1CFCF">
+    <Grid Margin="0,0,3.4,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="565*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="142*"/>
+            <ColumnDefinition Width="168*"/>
+            <ColumnDefinition Width="671*"/>
+            <ColumnDefinition Width="90*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.ColumnSpan="2" Grid.Column="3" Header="공중위협 현재 좌표" HorizontalAlignment="Left" Height="54" Margin="542,90,0,0" VerticalAlignment="Top" Width="184" BorderBrush="Black" BorderThickness="2" Background="#FFEAEAEA"/>
+        <GroupBox Grid.ColumnSpan="3" Header="레이다" HorizontalAlignment="Left" Height="54" Margin="13,301,0,0" VerticalAlignment="Top" Width="264" BorderBrush="Black" BorderThickness="2" Background="#FFEAEAEA"/>
+        <Border  BorderBrush="Black" BorderThickness="2" Grid.Column="3" HorizontalAlignment="Left" Height="390" Margin="7,20,0,0" VerticalAlignment="Top" Width="502">
+            <Canvas x:Name="cvMap" Margin="0.4,-1.6,-1.2,-1.6" Grid.Column="2" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5">
+                <Canvas.Background>
+                    <VisualBrush TileMode="Tile" Viewbox="0,0,50,50" Viewport="0,0,50,50" ViewportUnits="Absolute" ViewboxUnits="Absolute">
+                        <VisualBrush.Visual>
+                            <Rectangle Height="50" Stroke="DarkGray" StrokeThickness="1" StrokeDashArray="5 3" UseLayoutRounding="True" Width="50" d:DesignUseLayoutRounding="True"/>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Canvas.Background>
+                <Label Content="Y : " Canvas.Left="639" Canvas.Top="92"/>
+            </Canvas>
+        </Border>
+        <GroupBox Grid.ColumnSpan="3" Header="발사대" HorizontalAlignment="Left" Height="64" Margin="10,10,0,0" VerticalAlignment="Top" Width="267" BorderBrush="Black" BorderThickness="2" Background="#FFEAEAEA">
+            <TextBox x:Name="txbLcsY" HorizontalAlignment="Left" Height="25" Margin="168,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66" RenderTransformOrigin="0.988,0.216"/>
+        </GroupBox>
+        <Label Grid.ColumnSpan="2" Content="X : " HorizontalAlignment="Left" Margin="23,33,0,0" VerticalAlignment="Top" Width="29" Height="26"/>
+        <TextBox x:Name="txbLcsX" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="25" Margin="56,36,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="57"/>
+        <Label Content="Y : " Grid.Column="2" HorizontalAlignment="Left" Margin="10.4,32,0,0" VerticalAlignment="Top" Width="40" Height="26"/>
+        <GroupBox Grid.ColumnSpan="3" Header="공중위협" HorizontalAlignment="Left" Height="132" Margin="13,90,0,0" VerticalAlignment="Top" Width="264" BorderBrush="Black" BorderThickness="2" Background="#FFEAEAEA">
+            <Label Content="Start X : " HorizontalAlignment="Left" Height="34" VerticalAlignment="Top" Width="54" Margin="10,10,0,0"/>
+        </GroupBox>
+        <Label Content="Start Y : " Grid.Column="2" HorizontalAlignment="Left" Margin="3.4,117,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.11,-1.977" Height="26" Width="58"/>
+        <Label Grid.ColumnSpan="2" Content="End X : " HorizontalAlignment="Left" Margin="32,147,0,0" VerticalAlignment="Top" Height="26" Width="53"/>
+        <Label Content="End Y : " Grid.Column="2" HorizontalAlignment="Left" Margin="6.4,149,0,0" VerticalAlignment="Top" Height="26" Width="53"/>
+        <TextBox x:Name="txbAtsStartX" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="78,119,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="txbAtsStartY" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="59.4,121,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="64"/>
+        <TextBox x:Name="txbAtsEndX" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="79,151,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="59"/>
+        <TextBox x:Name="txbAtsEndY" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="59.4,153,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="64"/>
+        <Label Grid.ColumnSpan="2" Content="Speed : " HorizontalAlignment="Left" Margin="30,178,0,0" VerticalAlignment="Top" Height="26" Width="54"/>
+        <TextBox x:Name="txbAtsSpeed" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="78,182,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="60"/>
+        <GroupBox Grid.ColumnSpan="3" Header="유도탄" HorizontalAlignment="Left" Height="53" Margin="13,232,0,0" VerticalAlignment="Top" Width="264" BorderBrush="Black" BorderThickness="2" Background="#FFEAEAEA"/>
+        <Label Content="Y : " HorizontalAlignment="Left" Margin="9.4,319,0,0" VerticalAlignment="Top" Grid.Column="2" RenderTransformOrigin="-0.537,0.367" Height="26" Width="27"/>
+        <Label Content="Speed : " Grid.Column="1" HorizontalAlignment="Left" Margin="30,251,0,0" VerticalAlignment="Top" Height="23" Width="58"/>
+        <TextBox x:Name="txbAdrsX" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="61,322,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="77"/>
+        <TextBox x:Name="txbAdrsY" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="41.4,323,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="txbMslSpeed" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="79,251,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="59"/>
+        <Label Grid.ColumnSpan="2" Content="X : " HorizontalAlignment="Left" Margin="32,319,0,0" VerticalAlignment="Top" Height="26" Width="29"/>
+        <Button x:Name="btnSendScenario" Content="시나리오 배포" HorizontalAlignment="Left" Margin="35.4,429,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="4.157,-1.687" Height="35" Click="btnSendScenario_Click" Grid.Column="2" Background="White"/>
+        <Button x:Name="btnStartSim" Grid.ColumnSpan="2" Content="모의 시작" HorizontalAlignment="Left" Margin="31,375,0,0" VerticalAlignment="Top" Width="89" Height="35" Click="btnStartSim_Click" Background="White"/>
+        <Button x:Name="btnEndSim" Content="모의 종료" HorizontalAlignment="Left" Margin="36.4,375,0,0" VerticalAlignment="Top" Width="89" Height="35" Grid.Column="2" Click="btnEndSim_Click" Background="White"/>
+        <Button x:Name="btnFire" Content="유도탄 발사" HorizontalAlignment="Left" Height="35" Margin="31,429,0,0" VerticalAlignment="Top" Width="89" Grid.Column="1" Click="btnFire_Click" Background="White"/>
+        <RichTextBox x:Name="rtbRog" Grid.Column="3" HorizontalAlignment="Left" Height="231" Margin="542,178,0,0" VerticalAlignment="Top" Width="184" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="2" Background="#FFEAEAEA" >
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="RichTextBox"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <GroupBox Grid.ColumnSpan="2" Grid.Column="3" Header="유도탄 현재 좌표" HorizontalAlignment="Left" Height="52" Margin="538,22,0,0" VerticalAlignment="Top" Width="188" BorderBrush="Black" BorderThickness="2" Background="#FFEAEAEA"/>
+        <Label Content="X : " Grid.Column="3" HorizontalAlignment="Left" Margin="555,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labMslCurX" Content="0.0" Grid.Column="3" HorizontalAlignment="Left" Margin="584,41,0,0" VerticalAlignment="Top" Height="27" Width="26"/>
+        <Label Content="Y : " Grid.Column="3" HorizontalAlignment="Left" Margin="645,40,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label x:Name="labMslCurY" Content="0.0" Grid.Column="4" HorizontalAlignment="Left" Margin="13.2,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="X: " Grid.Column="3" HorizontalAlignment="Left" Height="26" Margin="552,113,0,0" VerticalAlignment="Top" Width="32"/>
+        <Label x:Name="labAtsCurX" Content="0.0" Grid.Column="3" HorizontalAlignment="Left" Margin="584,113,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="labAtsCurY" Content="0.0" Grid.Column="4" HorizontalAlignment="Left" Height="25" Margin="13.2,112,0,0" VerticalAlignment="Top" Width="29"/>
+
+
+    </Grid>
+</Window>
